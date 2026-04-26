@@ -1,0 +1,5 @@
+# Ignore build outputs from performing a nix-build
+result
+
+# Ignore hardware-configuration.nix
+hardware-configuration.nix
