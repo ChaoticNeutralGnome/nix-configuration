@@ -45,7 +45,7 @@
 
       # 500GB NVMe (fast storage)
       nvme = {
-        device = "/dev/nvme0n1p1";
+        device = "/dev/nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
@@ -65,7 +65,7 @@
 
       # 1TB HDD (bulk storage)
       hdd = {
-        device = "/dev/sdb1";
+        device = "/dev/sdb";
         type = "disk";
         content = {
           type = "gpt";
