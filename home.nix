@@ -13,6 +13,20 @@
         pkgs.httpie
     ];
 
+    home.shellAliases = {
+        ".." = "cd ../..";
+        "code" = "codium";
+    };
+
+    programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+
+        oh-my-zsh.enable = true;
+    };
+
     programs.git = {
         enable = true;
         settings = {
@@ -22,4 +36,6 @@
             };
         };
     };
+
+    
 }

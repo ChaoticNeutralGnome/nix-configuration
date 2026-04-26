@@ -36,10 +36,11 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
 
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  
+  # Enable the COSMIC Desktop Environment.
+  services.displayManager.cosmic-greeter.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  services.system76-scheduler.enable = true;
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -80,6 +81,7 @@
      floorp-bin
      vscodium
      git
+     sourcegit
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
