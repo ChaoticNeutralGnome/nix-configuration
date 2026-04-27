@@ -27,8 +27,6 @@
         oh-my-zsh.enable = true;
         oh-my-zsh.theme = "robbyrussell";
     };
-
-    programs.ssh.startAgent = true;
     
     programs.git = {
         enable = true;
