@@ -58,17 +58,20 @@
     pulse.enable = true;
   };
 
+    programs.zsh.enable = true;
+
+    programs.firefox.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.fia = {
     isNormalUser = true;
     initialPassword = "password";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #     tree
     ];
   };
-
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

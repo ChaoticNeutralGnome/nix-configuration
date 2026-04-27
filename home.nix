@@ -14,7 +14,7 @@
     ];
 
     home.shellAliases = {
-        ".." = "cd ../..";
+        ".." = "cd ..";
         "code" = "codium";
     };
 
@@ -25,8 +25,11 @@
         syntaxHighlighting.enable = true;
 
         oh-my-zsh.enable = true;
+        oh-my-zsh.theme = "robbyrussell";
     };
 
+    programs.ssh.startAgent = true;
+    
     programs.git = {
         enable = true;
         settings = {
