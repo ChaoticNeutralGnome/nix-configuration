@@ -89,6 +89,24 @@
      fastfetch
    ];
 
+   system.autoUpgrade = {
+    enable = true;
+    flake = ".";
+    flags = [
+      "--update-input" "nixpkgs"
+      "--print-build-logs"
+      "--commit-lock-file"  
+    ];
+    dates = "weekly";
+    randomizedDelaySec = "45min";
+    };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
