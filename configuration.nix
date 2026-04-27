@@ -35,11 +35,15 @@
   # Select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Enable the COSMIC Desktop Environment.
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
   services.system76-scheduler.enable = true;
+  environment.sessionVariables = {
+    COSMIC_DISABLE_VRR = "1";
+  };
 
 
   # Configure keymap in X11
@@ -61,6 +65,8 @@
     programs.zsh.enable = true;
 
     programs.firefox.enable = true;
+
+    programs.steam.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.fia = {
