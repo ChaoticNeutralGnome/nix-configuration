@@ -28,13 +28,11 @@
           inherit system;
           modules = [ 
             ./configuration.nix 
-            ./hardware-configuration.nix
+            ./hardware/desktop.nix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.fia = {
-                imports = [ ./home.nix ];
-              };
+              home-manager.users.fia = import ./home-manager/default.nix;
             }
           ];
         };
