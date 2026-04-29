@@ -1,5 +1,16 @@
 {config, ... }: {
 
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
+
+    # Load nvidia driver for Xorg and Wayland
+    services.xserver.videoDrivers = [ "nvidia" ];
+
+    # Prevent nouveau kernel module from loading
+    boot.blacklistedKernelModules = [ "nouveau" ];
+
     hardware.nvidia = {
 
         # Modesetting is required.
@@ -31,9 +42,5 @@
         package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
-    hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
-    };
-
+    
 }
