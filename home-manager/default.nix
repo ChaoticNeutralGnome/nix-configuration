@@ -14,6 +14,7 @@
         ./user-pakages.nix
         ./git.nix
         ./zsh.nix
+        ./firefox.nix
     ];
 
     home.stateVersion = "25.11";
