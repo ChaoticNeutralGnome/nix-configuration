@@ -15,6 +15,7 @@
         ./git.nix
         ./zsh.nix
         ./firefox.nix
+        ./vscode.nix
     ];
 
     home.stateVersion = "25.11";

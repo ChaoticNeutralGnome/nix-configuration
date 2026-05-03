@@ -12,6 +12,10 @@
             url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        nix-vscode-extensions = {
+            url = "github:nix-community/nix-vscode-extensions";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { 
@@ -25,6 +29,7 @@
         overlays = [
             (import ./overlays/unstable.nix {inherit inputs; })
             inputs.firefox-addons.overlays.default
+            inputs.nix-vscode-extensions.overlays.default
         ];
         lib = nixpkgs.lib;
     in {

@@ -9,7 +9,6 @@
     environment.systemPackages = with pkgs; [
         vim
         vivaldi
-        vscodium
         sourcegit
         discord
         fastfetch
