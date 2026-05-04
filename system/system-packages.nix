@@ -3,7 +3,9 @@
     programs = {
         zsh.enable = true;
         firefox.enable = true;
-        steam.enable = true;
+        steam = {
+            enable = true;
+        };
     };
 
     environment.systemPackages = with pkgs; [
@@ -12,6 +14,8 @@
         sourcegit
         discord
         fastfetch
+        texmaker
+        texliveFull
     ];
 
 }
