@@ -16,6 +16,7 @@
         ./zsh.nix
         ./firefox.nix
         ./vscode.nix
+        ./cosmic.nix
     ];
 
     home.stateVersion = "25.11";

@@ -16,6 +16,13 @@
             url = "github:nix-community/nix-vscode-extensions";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        cosmic-manager = {
+            url = "github:HeitorAugustoLN/cosmic-manager";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+                home-manager.follows = "home-manager";
+            };
+        };
     };
 
     outputs = { 
@@ -46,7 +53,12 @@
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.fia = import ./home-manager/default.nix;
+                        home-manager.users.fia = { 
+                            imports = [
+                                ./home-manager/default.nix
+                                inputs.cosmic-manager.homeManagerModules.cosmic-manager
+                            ];
+                        };
                         home-manager.extraSpecialArgs = {
                             inherit inputs overlays;
                         };
