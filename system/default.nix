@@ -38,14 +38,6 @@
         openFirewall = true;
     };
 
-    services.printing = {
-        enable = true;
-        drivers = with pkgs; [
-            cups-filters
-            cups-browsed
-        ];
-    };
-
     # Enable sound.
     services.pulseaudio.enable = false;
     services.pipewire = {
