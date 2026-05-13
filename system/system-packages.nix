@@ -3,9 +3,7 @@
     programs = {
         zsh.enable = true;
         firefox.enable = true;
-        steam = {
-            enable = true;
-        };
+        steam.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
@@ -16,6 +14,8 @@
         fastfetch
         texmaker
         texliveFull
+        mission-center
+        easyeffects
     ];
 
 }

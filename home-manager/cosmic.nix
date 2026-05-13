@@ -47,4 +47,17 @@
             }  
         ];
     };
+
+    # Launch on on Startup
+    xdg.configFile."autostart/easyeffects.desktop".text = ''
+        [Desktop Entry]
+        Type=Application
+        Version=1.0
+        Name=EasyEffects
+        Comment=PipeWire audio effects
+        Exec=easyeffects --gapplication-service
+        Terminal=false
+        Categories=AudioVideo;Audio;
+        X-GNOME-Autostart-enabled=true
+    '';
 }
