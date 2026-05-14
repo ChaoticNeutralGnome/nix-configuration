@@ -23,6 +23,7 @@
                 home-manager.follows = "home-manager";
             };
         };
+        rust-overlay.url = "github:oxalica/rust-overlay";
     };
 
     outputs = { 
@@ -37,8 +38,13 @@
             (import ./overlays/unstable.nix {inherit inputs; })
             inputs.firefox-addons.overlays.default
             inputs.nix-vscode-extensions.overlays.default
+            inputs.rust-overlay.overlays.default
         ];
         lib = nixpkgs.lib;
+        pkgs = import nixpkgs {
+            inherit system overlays;
+            config.allowUnfree = true;
+        };
     in {
         nixosConfigurations = {
             nixos = lib.nixosSystem {
@@ -69,5 +75,9 @@
                 };
             };
         };
+        devShells.${system} = 
+            import ./dev/default.nix {
+                inherit pkgs;
+            };
     };
 }
