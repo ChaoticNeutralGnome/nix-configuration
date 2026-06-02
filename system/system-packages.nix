@@ -16,6 +16,7 @@
         texliveFull
         mission-center
         easyeffects
+        libreoffice
     ];
 
 }
