@@ -1,8 +1,9 @@
-{pkgs, overlays, ...} : {
+{pkgs, config, overlays, ...} : {
 
     programs.firefox = {
 
         enable = true;
+        configPath = "${config.xdg.configHome}/mozilla/firefox";
 
         profiles.fia = {
 

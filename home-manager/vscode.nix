@@ -1,8 +1,9 @@
 {pkgs, inputs, ...} : {
 
-    programs.vscode = {
+    programs.vscodium = {
         enable = true;
         package = pkgs.vscodium;
+        
         mutableExtensionsDir = true;
 
         profiles.default = { 
